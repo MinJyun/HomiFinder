@@ -7,13 +7,15 @@ import React from 'react';
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
   const { data: authUser, isLoading: authLoading } = useGetAuthUserQuery();
+  console.log("NAVBAR_HEIGHT", NAVBAR_HEIGHT)
 
   return (
+
     <div className="h-full w-full">
       <Navbar />
       <main
         className={`h-full flex w-full flex-col`}
-        style={{ paddingTop: `${NAVBAR_HEIGHT}px}` }}
+        style={{ paddingTop: `${NAVBAR_HEIGHT}px` }}
       >
         {children}
       </main>

@@ -58,7 +58,7 @@ const SearchPage = () => {
         </div>
         <Map />
         <div className="basis-4/12 overflow-y-auto">
-          {/* <Listings /> */}
+          <Listings />
         </div>
       </div>
     </div>
