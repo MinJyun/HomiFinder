@@ -51,7 +51,7 @@ const Navbar = () => {
           >
             <div className="flex items-center gap-3">
               <Image
-                src="/logo.svg"
+                src="/home-logo.svg"
                 alt="Homifinder Logo"
                 width={24}
                 height={24}
@@ -59,7 +59,7 @@ const Navbar = () => {
               />
               <div className="text-xl font-bold">
                 HOMI
-                <span className="text-secondary-500 font-light hover:!text-primary-300">
+                <span className="text-sky-600 font-light hover:!text-primary-300">
                   FINDER
                 </span>
               </div>
