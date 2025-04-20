@@ -20,6 +20,8 @@ const Map = () => {
   useEffect(() => {
     if (isLoading || isError || !properties) return;
 
+    console.log("filters", filters)
+
     const map = new mapboxgl.Map({
       container: mapContainerRef.current!,
       style: "mapbox://styles/newmigan/cm9ebenps00bo01rce8we0lzf",
