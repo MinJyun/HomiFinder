@@ -7,7 +7,6 @@ import React from 'react';
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
   const { data: authUser, isLoading: authLoading } = useGetAuthUserQuery();
-  console.log("NAVBAR_HEIGHT", NAVBAR_HEIGHT)
 
   return (
 
