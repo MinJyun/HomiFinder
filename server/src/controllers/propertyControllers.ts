@@ -16,8 +16,6 @@ const s3Client = new S3Client({
   },
 })
 
-console.log("process.env.AWS_REGION", process.env.AWS_REGION)
-
 export const getProperties = async (
   req: Request,
   res: Response
@@ -253,17 +251,12 @@ export const createProperty = async (
           ]
         : [0, 0];
 
-    console.log("here1")
-
     // create location
     const [location] = await prisma.$queryRaw<Location[]>`
       INSERT INTO "Location" (address, city, state, country, "postalCode", coordinates)
       VALUES (${address}, ${city}, ${state}, ${country}, ${postalCode}, ST_SetSRID(ST_MakePoint(${longitude}, ${latitude}), 4326))
       RETURNING id, address, city, state, country, "postalCode", ST_AsText(coordinates) as coordinates;
     `;
-
-    console.log("here2")
-
 
     // create property
     const newProperty = await prisma.property.create({
